@@ -29,7 +29,7 @@ for r1_file in "$dir_path"/*_R1.fastq.gz; do
         echo "Processing $r1_file and $r2_file"
 
         # Run trust4 on the FASTQ files and save output to output_subdir
-        /home/uqsdemon/miniconda3/bin/trust4 -1 "$TMPDIR/$(basename "$r1_file")" -2 "$TMPDIR/$(basename "$r2_file")" -f "$reference_file" -t 64 -o "$output_subdir/$(basename "$r1_file" .fastq.gz)"
+        /home/uqsdemon/miniconda3/bin/trust4 -1 "$TMPDIR/$(basename "$r1_file")" -2 "$TMPDIR/$(basename "$r2_file")" -f "$reference_file" -t 64 -od "$output_subdir/$(basename "$r1_file" .fastq.gz)"
 
     fi
 done
