@@ -29,7 +29,7 @@ for r1_file in "$dir_path"/*_R1.fastq.gz; do
         echo "Processing $r1_file and $r2_file"
 
         # Run trust4 on the FASTQ files and save output to output_subdir
-        /home/uqachoo1/mambaforge/envs/env/bin/run-trust4 -1 "$TMPDIR/$(basename "$r1_file")" -2 "$TMPDIR/$(basename "$r2_file")" -f "$reference_file" -t 64 --od "$output_subdir"
+        /scratch/user/uqachoo1/miniforge3/bin/run-trust4 -1 "$TMPDIR/$(basename "$r1_file")" -2 "$TMPDIR/$(basename "$r2_file")" -f "$reference_file" -t 64 --od "$output_subdir"
 
     fi
 done

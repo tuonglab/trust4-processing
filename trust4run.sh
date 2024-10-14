@@ -31,5 +31,5 @@ for bamfile in "$bam_files_dir"/*.bam; do
     echo "Running run-trust4 for $bamfile"
 
     # Run run-trust4 on the bam file and save output to output_subdir
-    /scratch/user/uqachoo1/miniforge3/bin/run-trust4 -b "$TMPDIR/$(basename "$bamfile")" -f "$reference_file" -t 72 --od "$output_subdir" --abnormalUnmapFlag
+    /scratch/user/uqachoo1/miniforge3/bin/run-trust4 -b "$TMPDIR/$(basename "$bamfile")" -f "$reference_file" -t 24 --od "$output_subdir" --abnormalUnmapFlag --ref /home/uqachoo1/trust4-processing/human_IMGT+C.fa
 done

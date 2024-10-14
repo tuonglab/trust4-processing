@@ -2,10 +2,10 @@
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=64
+#SBATCH --cpus-per-task=24
 #SBATCH --mem=32G
 #SBATCH --job-name=trust4_fastq
-#SBATCH --time=96:00:00
+#SBATCH --time=3:00:00
 #SBATCH --partition=general
 #SBATCH --account=a_kelvin_tuong
 #SBATCH -o trust4run_fastq_phs002599.output

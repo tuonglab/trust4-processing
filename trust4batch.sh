@@ -2,7 +2,7 @@
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=150
+#SBATCH --cpus-per-task=24
 #SBATCH --mem=64G
 #SBATCH --job-name=trust4
 #SBATCH --time=336:00:00
