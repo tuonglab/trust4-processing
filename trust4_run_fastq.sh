@@ -49,7 +49,7 @@ for r1_file in "$dir_path"/*_R1.fq.gz; do
         echo "Processing $r1_file and $r2_file"
 
         # Run trust4 on the FASTQ files and save output to output_subdir
-        /home/uqachoo1/mambaforge/envs/env/bin/run-trust4 -1 "$TMPDIR/$(basename "$r1_file")" -2 "$TMPDIR/$(basename "$r2_file")" -f "$reference_file" -t 64 --od "$output_subdir"
+        /scratch/user/uqachoo1/miniforge3/bin/run-trust4 -1 "$TMPDIR/$(basename "$r1_file")" -2 "$TMPDIR/$(basename "$r2_file")" -f "$reference_file" -t 64 --od "$output_subdir"
 
         # Copy output files back to output_subdir
         rsync -avz "$output_subdir/"* "$output_subdir/" --progress
@@ -79,3 +79,26 @@ for r1_file in "$dir_path"/*_F.fq.gz; do
 
     fi
 done
+
+# Loop through all subdirectories in the specified directory
+for subdir in "$dir_path"/*/; do
+    r1_file="${subdir}$(basename "$subdir")_1.fastq"
+    r2_file="${subdir}$(basename "$subdir")_2.fastq"
+
+    if [ -f "$r1_file" ] && [ -f "$r2_file" ]; then
+
+        # Copy FASTQ files to $TMPDIR
+        rsync -avz "$r1_file" "$r2_file" "$TMPDIR/" --progress
+
+        # Process FASTQ files in $TMPDIR
+        dir=$(basename "${r1_file%_1.fastq}")
+        output_subdir="$output_dir/$dir"
+        mkdir -p "$output_subdir"
+        echo "Processing $r1_file and $r2_file"
+
+        # Run trust4 on the FASTQ files and save output to output_subdir
+        /scratch/user/uqachoo1/miniforge3/bin/run-trust4 -1 "$TMPDIR/$(basename "$r1_file")" -2 "$TMPDIR/$(basename "$r2_file")" -f "$reference_file" -t 64 --od "$output_subdir"
+
+    fi
+done
+
