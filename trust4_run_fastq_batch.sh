@@ -13,7 +13,7 @@
 
 # Set variables
 dir_path="/QRISdata/Q7361/SRRIDS/fastqfilesncbi"
-output_dir="scratch/project/tcr_ml/trust4_sra"
+output_dir="/scratch/project/tcr_ml/trust4_sra"
 fasta_file="/scratch/project/tcr_ml/trust4-processing/hg38_bcrtcr.fa"
 reference_genome=="/scratch/project/tcr_ml/trust4-processing/human_IMGT+C.fa"
 

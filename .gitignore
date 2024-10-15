@@ -18,3 +18,5 @@ trust4run_phs003111.output
 .vscode/c_cpp_properties.json
 trust4run_phs002517.error
 trust4run_phs002517.output
+trust4run_fastq_sra.error
+trust4run_fastq_sra.output

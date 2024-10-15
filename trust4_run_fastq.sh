@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if a directory path, an output directory, a reference file, and a processed files file were provided as arguments
-if [ "$#" -ne 3 ]; then
+if [ "$#" -ne 4 ]; then
     echo "Usage: $0 directory_path output_dir fasta_file reference_genome"
     exit 1
 fi
